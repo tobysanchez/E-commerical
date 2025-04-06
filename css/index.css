@@ -1,0 +1,214 @@
+div.top-image {
+  height: 100vh;
+  background-image: url(../imges/crypto_space-wallpaper-3840x2160.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+section.mtxt .st {
+  display: block;
+  font-size: 3.2em;
+  margin: 0.67em 0;
+  font-weight: bold;
+}
+
+section.mtxt .th {
+  display: block;
+  font-size: 2.4em;
+  margin: 1em 0;
+  font-weight: bold;
+}
+
+section.mtxt .se {
+  display: block;
+  font-size: 2.5em;
+  margin: 0.83em 0;
+  font-weight: bold;
+}
+
+section.content {
+  font-size: 2rem;
+  position: absolute;
+  top: 45%;
+  left: 10%;
+  transform: translateY(-50%);
+}
+
+section.content .coinsells {
+  text-transform: uppercase;
+  font-size: 1.7rem;
+}
+
+section.content .ethirum {
+  margin-top: 0.7rem;
+  font-weight: bold;
+}
+
+section.content .sale {
+  margin-block: 0.5rem;
+  font-weight: bold;
+}
+
+section.content .sale span {
+  color: rgba(255, 255, 7, 0.632);
+  margin-left: 0.8rem;
+}
+
+section.content .discount {
+  font-size: 1.5rem;
+}
+
+section.content button {
+  background-color: rgb(251, 255, 0);
+  color: rgb(0, 0, 0);
+  margin-top: 0.9rem;
+  font-size: 0.9rem;
+  border-radius: 3px;
+  padding: 0.6rem 1.6rem;
+  cursor: pointer;
+}
+
+article.card {
+  border-radius: 5px;
+  box-shadow: 0px 1px 1px 0px rgba(10, 222, 35, 0.581),
+    0px 1px 3px 0px rgba(70, 248, 5, 0.751);
+  transition: transform 0.2s;
+}
+
+article.card:hover {
+  transform: scale(1.01);
+}
+
+article.card img {
+  border-radius: 5px 5px 0 0;
+}
+
+.card .content {
+  background-color: rgba(14, 91, 2, 0.698);
+  border-radius: 0 0 5px 5px;
+}
+
+.card .content .title {
+  padding-top: 0.7rem;
+  padding-inline: 0.4rem;
+  text-transform: capitalize;
+}
+
+.card .content .description {
+  padding-inline: 0.4rem;
+  font-size: 0.8rem;
+  margin: 0.8rem 0 0.6rem 0;
+  line-height: 1.1rem;
+}
+
+.card .content .price {
+  margin-left: 0.88rem;
+  font-size: 0.9rem;
+  color: yellow;
+  font-weight: bold;
+}
+
+.add-to-cart {
+  margin-right: 0.88rem;
+  background-color: var(--GoldButton);
+  color: rgb(187, 0, 0);
+  border-radius: 4px;
+  padding: 6px 8px;
+  font-size: 0.7rem;
+  gap: 0.33rem;
+  cursor: pointer;
+}
+
+/* ===============================
+     Main contents (products)
+=================================*/
+
+main h1.recommended {
+  margin: 2.3rem 0 2rem 2%;
+}
+
+main section.products.flex {
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem 1.4rem;
+}
+
+/* Responsive adjustments for mobile */
+@media (max-width: 600px) {
+  section.mtxt .st {
+    font-size: 2em;
+  }
+
+  section.mtxt .th {
+    font-size: 1.8em;
+  }
+
+  section.mtxt .se {
+    font-size: 1.9em;
+  }
+
+  section.content {
+    font-size: 1.4rem;
+    left: 5%;
+  }
+
+  section.content .coinsells {
+    font-size: 1.2rem;
+  }
+
+  section.content .discount {
+    font-size: 1rem;
+  }
+
+  section.content button {
+    font-size: 0.8rem;
+    padding: 0.5rem 1.2rem;
+  }
+
+  main h1.recommended {
+    font-size: 1.4rem;
+  }
+
+  .card .content .price {
+    font-size: 0.8rem;
+  }
+
+  .add-to-cart {
+    font-size: 0.6rem;
+    padding: 4px 6px;
+  }
+}
+/* للشاشات الكبيرة (أجهزة الكمبيوتر) */
+@media (min-width: 992px) {
+  .container {
+    width: 960px;
+  }
+}
+
+/* للشاشات المتوسطة (أجهزة اللوحية) */
+@media (max-width: 991px) and (min-width: 768px) {
+  .container {
+    width: 720px;
+  }
+}
+
+/* للشاشات الصغيرة (الجوال) */
+@media (max-width: 767px) {
+  .container {
+    width: 100%;
+    padding: 0 15px;
+  }
+  .menu {
+    display: none;
+  } /* إخفاء القائمة في الجوال */
+}
+.container {
+  display: flex;
+  flex-wrap: wrap; /* يسمح للعناصر بالانتقال لأسفل إذا لم يكن هناك مساحة */
+}
+img {
+  max-width: 100%;
+  height: auto;
+}

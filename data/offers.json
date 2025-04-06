@@ -1,0 +1,17 @@
+{
+  "pubg": [
+    { "name": "500 شدة", "price": "10الف ج.س | 200 ج.م" },
+    { "name": "1200 شدة", "price": "10$" },
+    { "name": "2500 شدة", "price": "20$" },
+    { "name": "1200 شدة", "price": "1000$" },
+    { "name": "1200 شدة", "price": "10123456700$" }
+  ],
+  "freefire": [
+    { "name": "100 Diamonds", "price": "1$" },
+    { "name": "500 Diamonds", "price": "5$" }
+  ],
+  "cod": [
+    { "name": "CP 80", "price": "1.2$" },
+    { "name": "CP 400", "price": "5$" }
+  ]
+}

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>طلب USDT</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <script src="../js/usdtorder.js" defer></script>
+    <script src="../js/calculateTotal.js" defer></script>
+    <link rel="stylesheet" href="../css/usdt.css" />
+    <style>
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <img src="../imges/tether.svg" alt="Tether Logo" style="width: 50px; height: auto;">
+            <div>
+                <span style="font-weight: bold">USDT Exchange</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- أسعار الصرف -->
+    <section class="exchange-rates">
+        <h3>أسعار الصرف</h3>
+        <p>دولار شراء مقابل سوداني: <span id="rate-buy-sdg">...</span> </p>
+        <p>دولار بيع مقابل سوداني: <span id="rate-sell-sdg">...</span> </p>
+        <p>دولار شراء مقابل مصر: <span id="rate-buy-egp">...</span> </p>
+        <p>دولار بيع مقابل مصر: <span id="rate-sell-egp">...</span> </p>
+    </section>
+
+    <main>
+        <section class="order-section">
+            <div class="order-form">
+                <h2 style="color: #fff;">املأ بياناتك لإتمام الطلب</h2>
+
+                <!-- عرض رقم الطلب العشوائي -->
+                <div class="order-number">
+                    رقم الطلب: <span id="orderId"></span>
+                </div>
+
+                <form id="orderForm">
+                    <label>الاسم: <input type="text" name="name" id="name" required></label>
+                    <label>رقم الهاتف: <input type="tel" name="phone" id="phone" required></label>
+
+                    <!-- نوع المحفظة -->
+                    <label>نوع المحفظة:
+                        <select name="wallet-type" id="wallet-type" required onchange="toggleWalletFields()">
+                            <option value="">-- اختر نوع المحفظة --</option>
+                            <option value="centralized">محفظة مركزية</option>
+                            <option value="decentralized">محفظة لا مركزية</option>
+                        </select>
+                    </label>
+
+                    <!-- حقول المحفظة المركزية -->
+                    <div id="centralized-fields" class="hidden">
+                        <label>اسم المحفظة المركزية:
+                            <select name="centralized-wallet" id="centralized-wallet">
+                                <option value="binance">باينانس (Binance)</option>
+                                <option value="coinbase">كوين بيز (Coinbase)</option>
+                                <option value="kraken">كراكن (Kraken)</option>
+                                <option value="huobi">هوبي (Huobi)</option>
+                                <option value="okx">OKX</option>
+                                <option value="bybit">بايت (Bybit)</option>
+                                <option value="kucoin">كوكوين (KuCoin)</option>
+                                <option value="bitfinex">بتفينكس (Bitfinex)</option>
+                                <option value="gateio">Gate.io</option>
+                                <option value="crypto">كريبتو دوت كوم (Crypto.com)</option>
+                                <option value="other">أخرى</option>
+                            </select>
+                        </label>
+                        <div id="other-centralized-container" class="hidden">
+                            <label>اسم المحفظة الأخرى: <input type="text" name="other-centralized"
+                                    id="other-centralized"></label>
+                        </div>
+                        <label>رقم الحساب أو الإيميل: <input type="text" name="centralized-account"
+                                id="centralized-account"></label>
+                    </div>
+
+                    <!-- حقول المحفظة اللا مركزية -->
+                    <div id="decentralized-fields" class="hidden">
+                        <label>شبكة التحويل:
+                            <select name="network-type" id="network-type">
+                                <option value="tron">TRON (TRC20)</option>
+                                <option value="ethereum">Ethereum (ERC20)</option>
+                                <option value="binance-smart-chain">Binance Smart Chain (BEP20)</option>
+                                <option value="solana">Solana</option>
+                                <option value="polygon">Polygon</option>
+                                <option value="avalanche">Avalanche</option>
+                                <option value="arbitrum">Arbitrum</option>
+                                <option value="optimism">Optimism</option>
+                                <option value="fantom">Fantom</option>
+                                <option value="other">أخرى</option>
+                            </select>
+                        </label>
+                        <div id="other-network-container" class="hidden">
+                            <label>اسم الشبكة الأخرى: <input type="text" name="other-network"
+                                    id="other-network"></label>
+                        </div>
+                        <label>عنوان المحفظة (USDT): <input type="text" name="wallet-address"
+                                id="wallet-address"></label>
+                        <p style="color: #ffcc00; margin-top: 10px;">رسوم المعاملة على العميل</p>
+                    </div>
+
+                    <label>نوع العملية:
+                        <select name="transaction-type" id="transaction-type" onchange="calculateTotal()">
+                            <option value="buy">شراء</option>
+                            <option value="sell">بيع</option>
+                        </select>
+                    </label>
+                    <label>عملة الدفع:
+                        <select name="currency" id="currency" onchange="calculateTotal()">
+                            <option value="sdg">جنيه سوداني</option>
+                            <option value="egp">جنيه مصري</option>
+                        </select>
+                    </label>
+                    <!-- داخل النموذج بعد تحديد العملة -->
+                    <label>طريقة الدفع:
+                        <select name="payment-method" id="payment-method" required>
+                            <option value="">اختر طريقة الدفع</option>
+                            <!-- الخيارات ستظهر بناءً على العملة المختارة -->
+                            <option class="sdg-option" value="sudani">سوداني كاش</option>
+                            <option class="sdg-option" value="zain">زاين كاش</option>
+                            <option class="sdg-option" value="mtn">MTN Mobile</option>
+                            <option class="egp-option" value="vodafone">فودافون كاش</option>
+                            <option class="egp-option" value="etisalat">اتصالات كاش</option>
+                            <option class="egp-option" value="bank">تحويل بنكي</option>
+                        </select>
+                    </label>
+                    <label>المبلغ المطلوب (USDT): <input type="number" name="amount" id="amount"
+                            oninput="calculateTotal()" required></label>
+                    <p class="auto-calculate">سيتم حساب الفاتوره تلقائيًا </p>
+                    <p>المبلغ الإجمالي: <span id="total-price">0.00</span> <span id="currency-symbol">جنيه سوداني</span>
+                    </p>
+
+                    <!-- إضافة reCAPTCHA -->
+                    <div class="g-recaptcha" data-sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"
+                        data-callback="enableSubmit"></div>
+
+                    <button type="submit" id="submitBtn" disabled>إرسال الطلب</button>
+                </form>
+                <p class="disclaimer">⚠️ نحن غير مسؤولين عن أي خطأ في إدخال البيانات، الرجاء التأكد قبل الإرسال.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        جميع الحقوق محفوظة
+        <span>CryptoExchange</span>
+        <i class="fa-solid fa-copyright"></i>
+        2025.
+    </footer>
+
+    <script>
+
+    </script>
+</body>
+
+</html>

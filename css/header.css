@@ -1,0 +1,105 @@
+header.flex {
+  justify-content: space-between;
+  padding-inline: 5%;
+  padding-top: 1.2rem;
+
+  & .links .fa-solid {
+    margin: right 0.3rem;
+  }
+
+  & .sign-in {
+    margin-inline: 1rem;
+  }
+
+  .sign-in,
+  .register,
+  .search {
+    border: 1px solid var(--bodyFont);
+    padding: 0.44rem 1rem;
+    border-radius: 55px;
+    font-size: 0.88rem;
+    font-weight: 500;
+  }
+
+  /* ============= HOVER ============= */
+
+  .sign-in:hover,
+  .register:hover,
+  .search:hover,
+  .sign-in:hover .fa-solid,
+  .register:hover.fa-solid,
+  .search:hover.fa-solid {
+    background-color: var(--bodyFont);
+    color: var(--lemonGreen);
+  }
+
+  .cart {
+    background-color: var(--bodyFont);
+    color: var(--lemonGreen);
+    font-size: 0.9rem;
+    padding: 0.44rem 1.1rem 0.44rem 0.6rem;
+    border-radius: 55px;
+  }
+
+  & .cart .fa-solid {
+    color: rgb(255, 76, 76);
+  }
+
+  & .products-number {
+    position: absolute;
+    right: 0;
+    top: -7px;
+    font-size: 0.7rem;
+    font-weight: bold;
+
+    background-color: rgba(217, 12, 12, 0.533);
+    height: 20px;
+    width: 20px;
+    color: aliceblue;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+  }
+
+  /* ==============
+    LOGO SECTION
+    ================= */
+
+  .logo .fa-solid {
+    font-size: 2rem;
+  }
+}
+
+@media (width < 600px) {
+  header.flex {
+    justify-content: center;
+    padding-inline: 0%;
+
+    .links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+    }
+
+    .logo {
+      display: none;
+    }
+  }
+}
+
+.scroll-down {
+  position: fixed;
+  right: 0;
+  left: 0;
+
+  & .logo .fa-solid fa-crown {
+    font-size: 0.5rem;
+  }
+
+  /*background-color:rgb(57 4 55);
+  z-index: 11;
+  color: azure;*/
+}

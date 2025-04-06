@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            font-family: 'Cairo', sans-serif;
+            direction: rtl;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .game-sections {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 30px 0;
+            flex-wrap: wrap;
+        }
+
+        .game-card {
+            text-align: center;
+            text-decoration: none;
+            color: white;
+            background: linear-gradient(135deg, #6a0dad, #32cd32);
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+            width: 180px;
+        }
+
+        .game-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .game-card img {
+            width: 150px;
+            height: 150px;
+            border-radius: 10px;
+            object-fit: cover;
+        }
+
+        main {
+            flex: 1;
+            text-align: center;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        .back-button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background: #6a0dad;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: background 0.3s;
+        }
+
+        .back-button:hover {
+            background: #32cd32;
+        }
+    </style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/global.css" />
+    <link rel="stylesheet" href="../css/header.css" />
+    <link rel="stylesheet" href="../css/footer.css" />
+    <link rel="stylesheet" href="../css/index.css" />
+    <link rel="shortcut icon" href="./imges/square-web-awesome-brands-solid.svg" type="image/x-icon" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>تبديل أرصدة</title>
+</head>
+
+<body>
+    <header id="headerElement" class="flex">
+        <div class="logo">
+            <i class="fa-solid fa-crown"></i>
+            <span style="font-weight: bold">PRINCE</span>
+            <p style="letter-spacing: 3.5px">STORE</p>
+        </div>
+    </header>
+
+    <main>
+        <h1 style="text-align: center; color: rgb(162 255 0 / 95%);">اختر طريقة تبديل الارصدة</h1>
+
+        <div class="game-sections">
+            <a href="../pages/usdt.html" class="game-card">
+                <img src="../imges/tether.svg" alt="USDT" />
+                <h2>USDT</h2>
+            </a>
+
+            <a href="../pages/paypal.html" class="game-card">
+                <img src="../imges/paypal.png" alt="PayPal" />
+                <h2>PayPal</h2>
+            </a>
+
+            <a href="../pages/payeer.html" class="game-card">
+                <img src="../imges/payeer.png" alt="Payeer" />
+                <h2>Payeer</h2>
+            </a>
+            <a href="../pages/SDvsEG.html" class="game-card">
+                <img src="" alt="جنية مصري vs سوداني" />
+                <h2>جنية مصري \ سوداني</h2>
+            </a>
+        </div>
+
+        <a href="../index.html" class="back-button">الرجوع إلى الصفحة الرئيسية</a>
+    </main>
+
+    <footer>
+        All rights reserved
+        <span> TobySanchez & Koear.dev </span>
+        <i class="fa-solid fa-copyright"></i>
+        2025.
+    </footer>
+
+</body>
+
+</html>

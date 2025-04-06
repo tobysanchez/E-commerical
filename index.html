@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="../css/global.css" />
+  <link rel="stylesheet" href="../css/header.css" />
+  <link rel="stylesheet" href="../css/index.css" />
+  <link rel="stylesheet" href="../css/footer.css" />
+  <link rel="stylesheet" href="../css/styles.css" />
+  <link rel="shortcut icon" href="../imges/square-web-awesome-brands-solid.svg" type="image/x-icon" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <title>Main Page</title>
+  <style>
+    * {
+      font-family: 'Cairo', sans-serif;
+      direction: rtl;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .sections {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin: 50px 20px;
+      flex-wrap: wrap;
+    }
+
+    .section-card {
+      text-align: center;
+      text-decoration: none;
+      color: white;
+      background: linear-gradient(135deg, #6a0dad, #32cd32);
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s;
+      width: 100%;
+      max-width: 250px;
+    }
+
+    .section-card:hover {
+      transform: translateY(-10px);
+    }
+
+    .section-card .fa-gamepad,
+    .coin-icon,
+    .fa-mobile-screen {
+      font-size: 60px;
+      color: #32cd32;
+    }
+
+    .mtxt {
+      text-align: center;
+      margin: 20px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 10px;
+      margin-top: auto;
+    }
+
+    @media (max-width: 768px) {
+      .sections {
+        gap: 10px;
+        margin: 20px 10px;
+      }
+
+      .section-card {
+        padding: 15px;
+        max-width: 100%;
+      }
+
+      .section-card .fa-gamepad,
+      .coin-icon,
+      .fa-mobile-screen {
+        font-size: 50px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .sections {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .section-card {
+        width: 90%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="top-image">
+    <header id="headerElement" class="flex">
+      <div class="logo">
+        <i class="fa-solid fa-crown"></i>
+        <div>
+          <span style="font-weight: bold">PRINCE</span>
+          <p style="letter-spacing: 3.5px">STORE</p>
+        </div>
+      </div>
+      <div class="links flex">
+      </div>
+    </header>
+    <section class="mtxt">
+      <p class="st">متجر لشحن العملات الرقمية</p>
+      <p class="se">شراء وبيع دولار رقمي وجميع التحويلات لكل المحافظ</p>
+      <p class="th"> و شحن جميع الالعاب بافضل الاسعار</p>
+    </section>
+  </div>
+
+  <main>
+    <div class="sections">
+      <a href="./pages/fundsexchange.html" class="section-card">
+        <i class="fa-solid fa-coins coin-icon"></i>
+        <h2>تبديل أرصدة</h2>
+      </a>
+
+      <a href="./pages/apps.html" class="section-card">
+        <i class="fa-solid fa-mobile-screen"></i>
+        <h2>شحن تطبيقات</h2>
+      </a>
+
+      <a href="./pages/games.html" class="section-card">
+        <i class="fa-solid fa-gamepad"></i>
+        <h2>شحن ألعاب</h2>
+      </a>
+    </div>
+  </main>
+
+  <footer>
+    All rights reserved
+    <span> TobySanchez & Koear.dev </span>
+    <i class="fa-solid fa-copyright"></i>
+    2025.
+  </footer>
+
+  <script src="./js/main.js"></script>
+  <script src="./js/telegram-bot.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,470 @@
+/* ============ Global Styles ============ */
+:root {
+  --bodyBG: transparent;
+  --bodyFont: rgb(112, 68, 206);
+  --lemonColor: rgba(162, 255, 0, 0.95);
+  --lemonGreen: rgba(162, 255, 0, 0.95);
+  --GoldButton: rgb(255, 250, 108);
+  --RedButton: rgba(205, 12, 12, 0.765);
+  --BlueButton: rgb(6, 6, 220);
+  --Sahara: rgba(168, 152, 96, 0.621);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Cairo", "Roboto", sans-serif;
+  direction: rtl;
+}
+
+html {
+  scroll-behavior: smooth;
+  scrollbar-color: #3ded3d #3d4a59; /* for Firefox */
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-image: url("../imges/crypto_space-wallpaper-1920x1080.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  color: var(--lemonColor);
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+}
+
+main {
+  width: 80%;
+  margin-inline: auto;
+  flex: 1;
+}
+
+a,
+button {
+  all: unset;
+  display: inline-block;
+  transition: 0.2s;
+}
+
+button:active,
+a:active {
+  scale: 0.9;
+}
+
+button:hover,
+a:hover {
+  cursor: pointer;
+}
+
+button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  scale: 1;
+}
+
+li {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* ============ Header Styles ============ */
+header.flex {
+  justify-content: space-between;
+  padding: 1.2rem 5% 0;
+  position: relative;
+  z-index: 10;
+}
+
+header.flex .links .fa-solid {
+  margin-left: 0.3rem;
+}
+
+header.flex .sign-in {
+  margin-inline: 1rem;
+}
+
+.sign-in,
+.register,
+.search {
+  border: 1px solid var(--bodyFont);
+  padding: 0.44rem 1rem;
+  border-radius: 55px;
+  font-size: 0.88rem;
+  font-weight: 500;
+}
+
+.sign-in:hover,
+.register:hover,
+.search:hover,
+.sign-in:hover .fa-solid,
+.register:hover .fa-solid,
+.search:hover .fa-solid {
+  background-color: var(--bodyFont);
+  color: var(--lemonGreen);
+}
+
+.cart {
+  background-color: var(--bodyFont);
+  color: var(--lemonGreen);
+  font-size: 0.9rem;
+  padding: 0.44rem 1.1rem 0.44rem 0.6rem;
+  border-radius: 55px;
+}
+
+.cart .fa-solid {
+  color: rgb(255, 76, 76);
+}
+
+.products-number {
+  position: absolute;
+  left: 0;
+  top: -7px;
+  font-size: 0.7rem;
+  font-weight: bold;
+  background-color: rgba(217, 12, 12, 0.533);
+  height: 20px;
+  width: 20px;
+  color: aliceblue;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+/* Logo Section */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.5rem;
+  color: #9bf301;
+}
+
+.logo .fa-solid {
+  font-size: 2rem;
+}
+
+.scroll-down .logo .fa-crown {
+  font-size: 0.5rem;
+}
+
+/* ============ Main Content Styles ============ */
+.top-image {
+  height: 100vh;
+  background-image: url(../imges/crypto_space-wallpaper-3840x2160.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  position: relative;
+}
+
+.mtxt {
+  text-align: center;
+  margin: 20px 0;
+  padding: 0 10px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+}
+
+.mtxt .st {
+  display: block;
+  font-size: 3.2em;
+  margin: 0.67em 0;
+  font-weight: bold;
+}
+
+.mtxt .se {
+  display: block;
+  font-size: 2.5em;
+  margin: 0.83em 0;
+  font-weight: bold;
+}
+
+.mtxt .th {
+  display: block;
+  font-size: 2.4em;
+  margin: 1em 0;
+  font-weight: bold;
+}
+
+.sections {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin: 30px 20px;
+  flex-wrap: wrap;
+}
+
+.section-card {
+  text-align: center;
+  text-decoration: none;
+  color: white;
+  background: linear-gradient(135deg, #6a0dad, #32cd32);
+  padding: 25px 15px;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+  width: 100%;
+  max-width: 250px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.section-card h2 {
+  margin-top: 15px;
+  font-size: 1.3rem;
+}
+
+.section-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.section-card .fa-gamepad,
+.coin-icon,
+.fa-mobile-screen {
+  font-size: 50px;
+  color: white;
+}
+
+/* Products Section */
+.recommended {
+  margin: 2.3rem 0 2rem 2%;
+}
+
+.products.flex {
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem 1.4rem;
+}
+
+.card {
+  border-radius: 5px;
+  box-shadow: 0px 1px 1px 0px rgba(10, 222, 35, 0.581),
+    0px 1px 3px 0px rgba(70, 248, 5, 0.751);
+  transition: transform 0.2s;
+}
+
+.card:hover {
+  transform: scale(1.01);
+}
+
+.card img {
+  border-radius: 5px 5px 0 0;
+}
+
+.card .content {
+  background-color: rgba(14, 91, 2, 0.698);
+  border-radius: 0 0 5px 5px;
+  padding: 0.7rem 0.4rem;
+}
+
+.card .content .title {
+  text-transform: capitalize;
+}
+
+.card .content .description {
+  font-size: 0.8rem;
+  margin: 0.8rem 0 0.6rem 0;
+  line-height: 1.1rem;
+}
+
+.card .content .price {
+  margin-left: 0.88rem;
+  font-size: 0.9rem;
+  color: yellow;
+  font-weight: bold;
+}
+
+.add-to-cart {
+  margin-right: 0.88rem;
+  background-color: var(--GoldButton);
+  color: rgb(187, 0, 0);
+  border-radius: 4px;
+  padding: 6px 8px;
+  font-size: 0.7rem;
+  gap: 0.33rem;
+  cursor: pointer;
+}
+
+/* ============ Footer Styles ============ */
+footer {
+  text-align: center;
+  padding: 15px;
+  margin-top: auto;
+  background-color: #333;
+  color: white;
+}
+
+footer span {
+  margin: 0 5px;
+}
+
+/* ============ Media Queries ============ */
+@media (max-width: 992px) {
+  main {
+    width: 90%;
+  }
+}
+
+@media (max-width: 800px) {
+  main {
+    width: 95%;
+  }
+}
+
+@media (max-width: 768px) {
+  .logo {
+    font-size: 1.3rem;
+  }
+
+  .mtxt .st {
+    font-size: 2.5em;
+  }
+
+  .mtxt .se {
+    font-size: 2em;
+  }
+
+  .mtxt .th {
+    font-size: 1.9em;
+  }
+
+  .sections {
+    gap: 15px;
+    margin: 20px 10px;
+  }
+
+  .section-card {
+    padding: 20px 15px;
+    max-width: 45%;
+  }
+
+  .section-card h2 {
+    font-size: 1.1rem;
+  }
+
+  .section-card .fa-gamepad,
+  .coin-icon,
+  .fa-mobile-screen {
+    font-size: 40px;
+  }
+
+  .recommended {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 600px) {
+  header.flex {
+    justify-content: center;
+    padding-inline: 0%;
+  }
+
+  header.flex .links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  header.flex .logo {
+    display: none;
+  }
+
+  .mtxt .st {
+    font-size: 2em;
+  }
+
+  .mtxt .th {
+    font-size: 1.6em;
+  }
+
+  .mtxt .se {
+    font-size: 1.7em;
+  }
+
+  .sections {
+    flex-direction: row;
+    gap: 10px;
+  }
+
+  .section-card {
+    width: 100%;
+    max-width: 100%;
+    padding: 15px;
+    flex-direction: row;
+    justify-content: flex-start;
+    text-align: right;
+    gap: 15px;
+  }
+
+  .section-card h2 {
+    margin-top: 0;
+    font-size: 1rem;
+  }
+
+  .section-card .fa-gamepad,
+  .coin-icon,
+  .fa-mobile-screen {
+    font-size: 30px;
+  }
+
+  .recommended {
+    font-size: 1.3rem;
+    margin: 1.5rem 0 1.5rem 5%;
+  }
+
+  .card .content .price {
+    font-size: 0.8rem;
+  }
+
+  .add-to-cart {
+    font-size: 0.6rem;
+    padding: 4px 6px;
+  }
+}
+
+@media (max-width: 480px) {
+  .mtxt .st {
+    font-size: 1.7em;
+  }
+
+  .mtxt .th {
+    font-size: 1.4em;
+  }
+
+  .mtxt .se {
+    font-size: 1.5em;
+  }
+
+  .section-card {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+  }
+
+  @media (hover: none) {
+    .section-card:hover,
+    .card:hover {
+      transform: none;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+  }
+}

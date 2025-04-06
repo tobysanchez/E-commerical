@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>طلب PayPal</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <link rel="stylesheet" href="../css/paypal.css" />
+    <script src="../js/paypalOrder.js" defer></script>
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <img src="../imges/paypal.png" alt="PayPal Logo" class="paypal-icon">
+            <div>
+                <span style="font-weight: bold">PayPal Exchange</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- أسعار الصرف -->
+    <section class="exchange-rates">
+        <h3 style="color: #003087;">أسعار الصرف</h3>
+        <p>دولار شراء مقابل سوداني: <span id="rate-buy-sdg">...</span></p>
+        <p>دولار بيع مقابل سوداني: <span id="rate-sell-sdg">...</span></p>
+        <p>دولار شراء مقابل مصر: <span id="rate-buy-egp">...</span></p>
+        <p>دولار بيع مقابل مصر: <span id="rate-sell-egp">...</span></p>
+    </section>
+
+    <main>
+        <section class="order-section">
+            <div class="order-form">
+                <h2 style="color: #FFC439;">املأ بياناتك لإتمام الطلب</h2>
+
+                <!-- عرض رقم الطلب العشوائي -->
+                <div class="order-number">
+                    رقم الطلب: <span id="orderId"></span>
+                </div>
+
+                <form id="orderForm">
+                    <label>الاسم بالكامل كما في PayPal: <input type="text" name="name" id="name" required></label>
+                    <label>رقم الهاتف: <input type="tel" name="phone" id="phone" required></label>
+
+
+
+                    <label>بريد PayPal الإلكتروني: <input type="email" name="paypal-email" id="paypal-email"
+                            required></label>
+
+                    <label>نوع العملية:
+                        <select name="transaction-type" id="transaction-type" onchange="calculateTotal()">
+                            <option value="buy">شراء رصيد PayPal</option>
+                            <option value="sell">بيع رصيد PayPal</option>
+                        </select>
+                    </label>
+
+                    <label>العملة:
+                        <select name="currency" id="currency" onchange="calculateTotal()">
+                            <option value="sdg">جنيه سوداني</option>
+                            <option value="egp">جنيه مصري</option>
+                        </select>
+                    </label>
+                    <!-- داخل النموذج بعد تحديد العملة -->
+                    <label>طريقة الدفع:
+                        <select name="payment-method" id="payment-method" required>
+                            <option value="">اختر طريقة الدفع</option>
+                            <!-- الخيارات ستظهر بناءً على العملة المختارة -->
+                            <option class="sdg-option" value="sudani">سوداني كاش</option>
+                            <option class="sdg-option" value="zain">زاين كاش</option>
+                            <option class="sdg-option" value="mtn">MTN Mobile</option>
+                            <option class="egp-option" value="vodafone">فودافون كاش</option>
+                            <option class="egp-option" value="etisalat">اتصالات كاش</option>
+                            <option class="egp-option" value="bank">تحويل بنكي</option>
+                        </select>
+                    </label>
+
+                    <label>المبلغ المطلوب (USD): <input type="number" name="amount" id="amount"
+                            oninput="calculateTotal()" required></label>
+
+                    <p class="auto-calculate">سيتم حساب المبلغ الإجمالي تلقائيًا</p>
+                    <p>المبلغ الإجمالي: <span id="total-price">0.00</span> <span id="currency-symbol">جنيه سوداني</span>
+                    </p>
+
+                    <!-- إضافة reCAPTCHA -->
+                    <div class="g-recaptcha" data-sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"
+                        data-callback="enableSubmit"></div>
+
+                    <button type="submit" id="submitBtn" disabled>إرسال الطلب</button>
+                </form>
+                <p class="disclaimer">⚠️ تأكد من صحة البيانات قبل الإرسال. لن نكون مسؤولين عن أي أخطاء في إدخال
+                    البيانات.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        جميع الحقوق محفوظة
+        <span>PayPal Exchange</span>
+        <i class="fa-solid fa-copyright"></i>
+        2025.
+    </footer>
+
+    <script>
+
+    </script>
+</body>
+
+</html>

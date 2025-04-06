@@ -1,0 +1,168 @@
+* {
+  font-family: "Cairo", sans-serif;
+  direction: rtl;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: url("https://www.paypalobjects.com/marketing/web/shared/rebrand/ppcredit/backgrounds/blue-purple-gradient.jpg")
+    no-repeat center center fixed;
+  background-size: cover;
+  color: #fff;
+  text-align: center;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  font-size: 24px;
+  font-weight: bold;
+  color: #ffc439;
+}
+
+.order-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.order-form {
+  margin-top: 20px;
+  background: linear-gradient(135deg, #0344bc, #01a9f0);
+  padding: 20px;
+  border-radius: 10px;
+  width: 80%;
+  max-width: 500px;
+  color: white;
+  font-weight: bold;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+input,
+select,
+button {
+  width: 100%;
+  padding: 12px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+button {
+  background: #ffc439;
+  color: #0142bc;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+  margin-top: 20px;
+}
+
+button:hover {
+  background: #ffd15e;
+}
+
+.disclaimer {
+  margin-top: 20px;
+  font-size: 14px;
+  color: #ffc439;
+  font-weight: bold;
+}
+
+.time-restriction {
+  background-color: #e53c3c;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  margin-top: 15px;
+  display: none;
+}
+
+.exchange-rates {
+  margin-top: 20px;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.9);
+  color: #033aa0;
+  border-radius: 10px;
+  width: 80%;
+  max-width: 500px;
+  font-weight: bold;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+footer {
+  margin-top: 30px;
+  padding: 15px;
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+  border-radius: 5px;
+}
+
+.hidden {
+  display: none;
+}
+
+.auto-calculate {
+  color: #ffc439;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.order-number {
+  background-color: #0440b0;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 15px;
+  font-weight: bold;
+  font-size: 18px;
+  color: white;
+  border: 1px solid #ffc439;
+}
+
+.g-recaptcha {
+  display: flex;
+  justify-content: center;
+  margin: 15px 0;
+}
+
+#submitBtn {
+  display: none;
+}
+
+.paypal-icon {
+  width: 30px;
+  height: 30px;
+  margin-left: 10px;
+}
+
+.payment-method {
+  margin-top: 15px;
+  padding: 10px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 5px;
+}
+
+/* إخفاء الخيارات الغير مرتبطة بالعملة */
+.egp-option {
+  display: none;
+}
+
+.sdg-option {
+  display: none;
+}
+
+.show-options .egp-option,
+.show-options .sdg-option {
+  display: block;
+}

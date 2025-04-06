@@ -1,0 +1,128 @@
+header.flex {
+    background-color: rgba(36, 1, 111, 0.488);
+    padding-block: 0.6rem;
+
+     .logo .fa-solid {
+        font-size: 1.5rem;
+    }
+
+    .sign-in:hover,
+    .register:hover,
+    .sign-in:hover {
+        border: 1px solid white;
+        padding: 0.5rem 1.1rem;
+    }
+
+    & .cart:hover {
+        border: 1px solid white;
+        padding: 0.5rem 1.1rem 0.5rem 0.7rem;
+    }
+
+    & .logo:hover {
+        scale: 0.95;
+    }
+}
+
+section.cart article.flex{
+    background-color:var(--bodyFont);
+    color: var(--lemonColor);
+    border-top: 2px solid var(--bodyFont);
+    margin-top: 1.8rem;
+
+    justify-content: space-between;
+    max-width: 450px;
+    margin-inline: auto;
+    border-radius: 4px;
+    font-weight: 500;
+
+    box-shadow: rgba(10, 222, 35, 0.581), 0px 1px 1px 0px rgba(240, 11, 11, 0.14), 0px 1px 3px 0px rgba(70, 248, 5, 0.751);
+
+    & .fa-trash{
+        color: var(--RedButton);
+        margin-left: 1rem;
+    }
+
+    & button.decrease{
+        color: var(--RedButton);
+        font-size: 1.9rem;
+    }
+
+    & .quantity{
+        background-color: var(--Sahara);
+        font-size: 0.8rem;
+        height: 21px;
+        width: 21px;
+        border-radius: 40%;
+        justify-content: center;
+        margin-inline: 0.4rem;
+    }
+
+    & button.increase{
+        color: var(--lemonColor);
+        font-size: 1.6rem;
+    }
+
+
+
+}
+
+button.clear{
+    background-color: var(--RedButton);
+    color: white;
+
+    margin-top: 1rem;
+    border-radius: 4px;
+    padding: 6px 8px;
+    font-size: 0.8rem;
+}
+
+section.summary{
+    background-color: var(--Sahara);
+
+
+    width: 233px;
+    margin-inline: auto;
+    margin-top: 2.5rem;
+    border-radius: 4px;
+}
+
+& h1{
+    font-size: 1.2rem;
+    padding-block: 0.5rem;
+    border-bottom: solid black;
+}
+
+& div.flex{
+    padding-inline: 0.5rem;
+    margin-block: 0.6rem;
+    justify-content: space-between;
+}
+
+& button.checkout{
+    width: 100%;
+    background-color: var(--lemonColor);
+    color: rgba(241, 2, 2, 0.891);
+    padding-block: 0.6rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+& a{
+    padding-block: 0.5rem;
+    color: var(--lemonColor);
+    font-style: 0.9rem;
+}
+
+
+
+/* main {
+    width: 80%;
+    margin-inline: auto;
+  }
+  
+  @media (width < 800px) {
+    main {
+      width: 100%;
+    }
+  
+  } */
