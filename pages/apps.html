@@ -2,11 +2,10 @@
 <html lang="ar">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
-    <title>تبديل أرصدة</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     <style>
         * {
             font-family: 'Cairo', sans-serif;
@@ -38,19 +37,9 @@
             font-size: 1.5rem;
         }
 
-        main {
-            flex: 1;
-            text-align: center;
-            padding: 20px;
-        }
-
-        h1 {
-            color: #a2ff00cc;
-            margin-bottom: 30px;
-            font-size: 1.4rem;
-        }
-
         .apps-container {
+            flex: 1;
+            padding: 20px;
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
             gap: 20px;
@@ -64,32 +53,34 @@
             border-radius: 15px;
             padding: 20px;
             text-align: center;
+            transition: transform 0.3s;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             text-decoration: none;
             color: white;
-            transition: transform 0.3s, background 0.3s;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
 
         .app-card:hover {
             transform: translateY(-5px);
+            background: #3a3a3a;
         }
 
         .app-icon {
             width: 80px;
             height: 80px;
-            object-fit: contain;
-            margin: 20px auto;
+            margin: 0 auto 15px;
+            border-radius: 20px;
+            object-fit: cover;
         }
-
 
         .app-name {
             font-size: 1.1rem;
             font-weight: 700;
+            color: #32cd32;
         }
 
         .back-button {
             display: inline-block;
-            margin: 30px auto 0;
+            margin: 30px auto;
             padding: 12px 30px;
             background: #32cd32;
             color: white;
@@ -104,16 +95,16 @@
 
         footer {
             background: #2a2a2a;
-            padding: 15px;
+            padding: 20px;
             text-align: center;
             margin-top: auto;
-            font-size: 0.9rem;
         }
 
         @media (max-width: 480px) {
             .apps-container {
                 grid-template-columns: repeat(2, 1fr);
                 gap: 15px;
+                padding: 10px;
             }
 
             .app-card {
@@ -121,10 +112,12 @@
             }
 
             .app-icon {
-                height: 100px;
+                width: 60px;
+                height: 60px;
             }
         }
     </style>
+    <title>شحن التطبيقات</title>
 </head>
 
 <body>
@@ -136,30 +129,43 @@
     </header>
 
     <main>
-        <h1>اختر طريقة تبديل الأرصدة</h1>
         <div class="apps-container">
-            <a href="../pages/usdt.html" class="app-card">
-                <img src="../imges/tether.svg" alt="USDT" class="app-icon" />
-                <div class="app-name">USDT</div>
+            <a href="#" class="app-card">
+                <img src="../imges/telegram.png" alt="Telegram" class="app-icon">
+                <div class="app-name">Telegram</div>
             </a>
-            <a href="../pages/paypal.html" class="app-card">
-                <img src="../imges/paypal.png" alt="PayPal" class="app-icon" />
-                <div class="app-name">PayPal</div>
+
+            <a href="#" class="app-card">
+                <img src="../imges/bigo-live.png" alt="Bigo Live" class="app-icon">
+                <div class="app-name">Bigo Live</div>
             </a>
-            <a href="../pages/payeer.html" class="app-card">
-                <img src="../imges/payeer.png" alt="Payeer" class="app-icon" />
-                <div class="app-name">Payeer</div>
+
+            <a href="#" class="app-card">
+                <img src="../imges/likee.png" alt="Likee" class="app-icon">
+                <div class="app-name">Likee</div>
             </a>
-            <a href="../pages/SDvsEG.html" class="app-card">
-                <img src="../imges/egp-sdg.png" alt="جنية مصري vs سوداني" class="app-icon" />
-                <div class="app-name">جنية مصري \ سوداني</div>
+
+            <a href="#" class="app-card">
+                <img src="../imges/poppo-live.png" alt="Poppo Live" class="app-icon">
+                <div class="app-name">Poppo Live</div>
+            </a>
+
+            <a href="#" class="app-card">
+                <img src="../imges/mango-live.png" alt="Mango Live" class="app-icon">
+                <div class="app-name">Mango Live</div>
+            </a>
+
+            <a href="#" class="app-card">
+                <img src="../imges/mico-live.png" alt="Mico Live" class="app-icon">
+                <div class="app-name">Mico Live</div>
             </a>
         </div>
-        <a href="../index.html" class="back-button">الرجوع إلى الصفحة الرئيسية</a>
+
+        <a href="../index.html" class="back-button">العودة للرئيسية</a>
     </main>
 
     <footer>
-        جميع الحقوق محفوظة <span>TobySanchez & Koear.dev</span> <i class="fa-solid fa-copyright"></i> 2025
+        <p>جميع الحقوق محفوظة <span>PRINCE STORE</span> <i class="fa-solid fa-copyright"></i> 2024</p>
     </footer>
 </body>
 

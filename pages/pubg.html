@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ببجي</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <script src="../js/pubgOrder.js" defer></script>
@@ -18,28 +18,49 @@
         }
 
         body {
-            background: url('../imges/crypto_space-wallpaper-1920x1080.jpg') no-repeat center center fixed;
-            background-size: cover;
+            background: #1a1a1a;
             color: #fff;
             text-align: center;
             padding: 10px;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
         }
 
         header {
+            background: #2a2a2a;
+            padding: 15px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .logo {
             display: flex;
             justify-content: center;
             align-items: center;
-            padding: 15px;
-            font-size: 20px;
-            font-weight: bold;
-            color: #A2FF00;
+            gap: 10px;
+            color: #32cd32;
+            font-size: 1.5rem;
+        }
+
+        .logo i {
+            font-size: 2rem;
+        }
+
+        main {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 20px;
         }
 
         .order-section {
+            max-width: 400px;
+            width: 100%;
             display: flex;
             flex-direction: column;
             align-items: center;
-            margin-top: 20px;
+            gap: 20px;
         }
 
         .game-image img {
@@ -50,78 +71,101 @@
         }
 
         .order-form {
-            margin-top: 15px;
-            background: linear-gradient(135deg, #6a0dad, #32cd32);
-            padding: 15px;
-            border-radius: 10px;
+            background: #2a2a2a;
+            padding: 20px;
+            border-radius: 15px;
             width: 100%;
-            max-width: 400px;
-            color: white;
-            font-weight: bold;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             text-align: right;
         }
 
-        input,
-        select,
-        button {
+        .order-form h2 {
+            margin-bottom: 15px;
+            color: #32cd32;
+        }
+
+        .order-form label {
+            display: block;
+            margin-top: 10px;
+            font-weight: bold;
+            color: #ddd;
+        }
+
+        .order-form input,
+        .order-form select {
             width: 100%;
             padding: 10px;
-            margin-top: 10px;
+            margin-top: 5px;
             border: none;
             border-radius: 5px;
         }
 
-        button {
-            background: #6a0dad;
-            color: white;
-            font-size: 16px;
+        .order-form button {
+            width: 100%;
+            padding: 12px;
+            margin-top: 15px;
+            background: #32cd32;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
             cursor: pointer;
-            transition: 0.3s;
+            transition: background 0.3s;
+            font-weight: bold;
         }
 
-        button:hover {
-            background: #32cd32;
+        .order-form button:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+
+        .order-form button:hover:enabled {
+            background: #228b22;
         }
 
         .g-recaptcha {
-            margin-top: 5px;
+            margin-top: 15px;
             transform: scale(1);
             transform-origin: center;
         }
 
+        .disclaimer {
+            margin-top: 10px;
+            font-size: 0.9rem;
+            color: #aaa;
+        }
+
         .return-btn {
-            margin-top: 15px;
-            background: #6a0dad;
-            color: white;
-            padding: 10px 15px;
-            border-radius: 5px;
-            font-size: 16px;
-            font-weight: bold;
-            text-decoration: none;
             display: inline-block;
-            transition: 0.3s;
+            margin-top: 10px;
+            padding: 10px 20px;
+            background: #32cd32;
+            color: white;
+            border-radius: 25px;
+            text-decoration: none;
+            transition: background 0.3s;
+            font-weight: bold;
         }
 
         .return-btn:hover {
-            background: #32cd32;
+            background: #228b22;
         }
 
         footer {
-            margin-top: 20px;
-            padding: 10px;
-            background: rgba(0, 0, 0, 0.8);
-            color: white;
-            font-size: 14px;
-            font-weight: bold;
-        }
-
-        footer span {
-            color: #A2FF00;
+            background: #2a2a2a;
+            padding: 15px;
+            text-align: center;
+            font-size: 0.9rem;
+            margin-top: auto;
         }
 
         @media (max-width: 600px) {
             .g-recaptcha {
                 transform: scale(0.8);
+            }
+
+            .order-section {
+                padding: 0 10px;
             }
         }
     </style>
@@ -130,10 +174,10 @@
 <body>
     <header>
         <div class="logo">
-            <i class="fa-solid fa-crown" style="font-size: 40px;"></i>
+            <i class="fa-solid fa-crown"></i>
             <div>
-                <span style="font-weight: bold">PRINCE</span>
-                <p style="letter-spacing: 3px">STORE</p>
+                <span style="font-weight:bold;">PRINCE</span>
+                <p style="letter-spacing:3px;">STORE</p>
             </div>
         </div>
     </header>
@@ -147,32 +191,43 @@
             <div class="order-form">
                 <h2>املأ بياناتك لإتمام الطلب</h2>
                 <form id="orderForm">
-                    <label>الاسم: <input type="text" name="name" required></label>
-                    <label>رقم الهاتف: <input type="tel" name="phone" required></label>
-                    <label>البريد الإلكتروني: <input type="email" name="email" required></label>
-                    <label>اختر العرض: <select name="offer">
+                    <label>الاسم
+                        <input type="text" name="name" required>
+                    </label>
+                    <label>رقم الهاتف
+                        <input type="tel" name="phone" required>
+                    </label>
+                    <label>البريد الإلكتروني
+                        <input type="email" name="email" required>
+                    </label>
+                    <label>اختر العرض
+                        <select name="offer">
                             <option value="">جاري التحميل...</option>
-                        </select></label>
-                    <label>طريقة الدفع:
+                        </select>
+                    </label>
+                    <label>طريقة الدفع
                         <select name="payment">
                             <option value="paypal">باي بال</option>
                             <option value="credit">بطاقة ائتمان</option>
                             <option value="other">أخرى</option>
                         </select>
                     </label>
-                    <label>ID الحساب في اللعبة: <input type="text" name="game-id" required></label>
+                    <label>ID الحساب في اللعبة
+                        <input type="text" name="game-id" required>
+                    </label>
                     <div class="g-recaptcha" data-sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"
                         data-callback="enableSubmit"></div>
                     <button type="submit" id="submitBtn" disabled>إرسال الطلب</button>
                 </form>
                 <p class="disclaimer">⚠️ نحن غير مسؤولين عن أي خطأ في إدخال البيانات، الرجاء التأكد قبل الإرسال.</p>
             </div>
+
             <a href="../index.html" class="return-btn">العودة إلى الصفحة الرئيسية</a>
         </section>
     </main>
 
     <footer>
-        All rights reserved <span>TobySanchez & Koear.dev</span> <i class="fa-solid fa-copyright"></i> 2025.
+        جميع الحقوق محفوظة <span>TobySanchez & Koear.dev</span> <i class="fa-solid fa-copyright"></i> 2025
     </footer>
 </body>
 

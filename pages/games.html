@@ -1,9 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar">
 
 <head>
-    <meta charset="UTF-8">
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+    <title>شحن الألعاب</title>
     <style>
         * {
             font-family: 'Cairo', sans-serif;
@@ -13,121 +16,171 @@
             box-sizing: border-box;
         }
 
-        html,
         body {
-            height: 100%;
+            background: #1a1a1a;
+            color: white;
+            min-height: 100vh;
             display: flex;
             flex-direction: column;
         }
 
-        .game-sections {
+        .header {
+            padding: 20px;
+            background: #2a2a2a;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .logo {
             display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin: 30px 0;
-            flex-wrap: wrap;
-        }
-
-        .game-card {
-            text-align: center;
-            text-decoration: none;
-            color: white;
-            background: linear-gradient(135deg, #6a0dad, #32cd32);
-            padding: 15px;
-            border-radius: 10px;
-            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s;
-            width: 180px;
-        }
-
-        .game-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .game-card img {
-            width: 150px;
-            height: 150px;
-            border-radius: 10px;
-            object-fit: cover;
+            align-items: center;
+            gap: 10px;
+            color: #32cd32;
+            font-size: 1.5rem;
         }
 
         main {
             flex: 1;
-            text-align: center;
         }
 
-        footer {
+        h1 {
             text-align: center;
-            padding: 10px 0;
+            margin: 20px 0;
+            color: #32cd32;
+            font-size: 1.4rem;
+        }
+
+        .apps-container {
+            padding: 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .app-card {
+            background: #2a2a2a;
+            border-radius: 15px;
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.3s, background 0.3s;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-decoration: none;
+            color: white;
+        }
+
+        .app-card:hover {
+            transform: translateY(-5px);
+            background: #3a3a3a;
+        }
+
+        .app-icon {
+            width: 80px;
+            height: 80px;
+            object-fit: contain;
+            margin: 0 auto 15px;
+        }
+
+        .app-name {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #32cd32;
         }
 
         .back-button {
             display: inline-block;
-            margin-top: 20px;
-            padding: 10px 20px;
-            background: #6a0dad;
+            margin: 30px auto 0;
+            padding: 12px 30px;
+            background: #32cd32;
             color: white;
+            border-radius: 25px;
             text-decoration: none;
-            border-radius: 8px;
             transition: background 0.3s;
         }
 
         .back-button:hover {
-            background: #32cd32;
+            background: #228b22;
+        }
+
+        footer {
+            background: #2a2a2a;
+            padding: 20px;
+            text-align: center;
+            margin-top: auto;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 480px) {
+            .apps-container {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 15px;
+                padding: 10px;
+            }
+
+            .app-card {
+                padding: 15px;
+            }
+
+            .app-icon {
+                height: 60px;
+            }
         }
     </style>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../css/global.css" />
-    <link rel="stylesheet" href="../css/header.css" />
-    <link rel="stylesheet" href="../css/footer.css" />
-    <link rel="stylesheet" href="../css/index.css" />
-    <link rel="shortcut icon" href="./imges/square-web-awesome-brands-solid.svg" type="image/x-icon" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
-        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <title>شحن الألعاب</title>
 </head>
 
 <body>
-    <header id="headerElement" class="flex">
+    <header class="header">
         <div class="logo">
             <i class="fa-solid fa-crown"></i>
-            <span style="font-weight: bold">PRINCE</span>
-            <p style="letter-spacing: 3.5px">STORE</p>
+            <span>PRINCE STORE</span>
         </div>
     </header>
 
     <main>
-        <h1 style="text-align: center; color: rgb(162 255 0 / 95%);">اختر اللعبة التي تريد شحنها</h1>
-
-        <div class="game-sections">
-            <a href="../pages/pubg.html" class="game-card">
-                <img src="../imges/pubg (2).jpg" alt="PUBG" />
-                <h2>PUBG</h2>
+        <h1>اختر اللعبة التي تريد شحنها</h1>
+        <div class="apps-container">
+            <a href="../pages/pubg.html" class="app-card">
+                <img src="../imges/pubg (2).jpg" alt="PUBG" class="app-icon" />
+                <div class="app-name">PUBG</div>
             </a>
-
-            <a href="#" class="game-card">
-                <img src="../imges/freefire.webp" alt="Free Fire" />
-                <h2>Free Fire</h2>
+            <a href="#" class="app-card">
+                <img src="../imges/freefire.webp" alt="Free Fire" class="app-icon" />
+                <div class="app-name">Free Fire</div>
             </a>
-
-            <a href="#" class="game-card">
-                <img src="../imges/cod.jpg" alt="Call of Duty" />
-                <h2>Call of Duty</h2>
+            <a href="#" class="app-card">
+                <img src="../imges/cod.jpg" alt="Call of Duty" class="app-icon" />
+                <div class="app-name">Call of Duty</div>
+            </a>
+            <a href="#" class="app-card">
+                <img src="../imges/game4.jpg" alt="لعبة 4" class="app-icon" />
+                <div class="app-name">لعبة 4</div>
+            </a>
+            <a href="#" class="app-card">
+                <img src="../imges/game5.jpg" alt="لعبة 5" class="app-icon" />
+                <div class="app-name">لعبة 5</div>
+            </a>
+            <a href="#" class="app-card">
+                <img src="../imges/game6.jpg" alt="لعبة 6" class="app-icon" />
+                <div class="app-name">لعبة 6</div>
+            </a>
+            <a href="#" class="app-card">
+                <img src="../imges/game7.jpg" alt="لعبة 7" class="app-icon" />
+                <div class="app-name">لعبة 7</div>
+            </a>
+            <a href="#" class="app-card">
+                <img src="../imges/game8.jpg" alt="لعبة 8" class="app-icon" />
+                <div class="app-name">لعبة 8</div>
             </a>
         </div>
-
-        <a href="../index.html" class="back-button">الرجوع إلى الصفحة الرئيسية</a>
+        <div style="text-align:center;">
+            <a href="../index.html" class="back-button">الرجوع إلى الصفحة الرئيسية</a>
+        </div>
     </main>
 
     <footer>
-        All rights reserved
-        <span> TobySanchez & Koear.dev </span>
-        <i class="fa-solid fa-copyright"></i>
-        2025.
+        جميع الحقوق محفوظة <span>PRINCE STORE</span> <i class="fa-solid fa-copyright"></i> 2024
     </footer>
-
 </body>
 
 </html>
